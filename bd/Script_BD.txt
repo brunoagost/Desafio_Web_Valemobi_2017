@@ -1,0 +1,44 @@
+CREATE SCHEMA IF NOT EXISTS `mercadoria_db`
+DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ;
+
+USE `mercadoria_db` ;
+
+CREATE TABLE IF NOT EXISTS `mercadorias_db`.`tiponegocio_tb` (
+
+ `tiponegocio_id` INT NULL AUTO_INCREMENT,
+
+ `nome` VARCHAR(45) NULL,
+
+PRIMARY KEY (`tiponegocio_id`))
+
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `mercadoria_db`.`mercadoria_tb` (
+
+ `codigo_id` INT NOT NULL,
+
+ `tipo` VARCHAR(45) NOT NULL,
+
+ `nome` VARCHAR(45) NOT NULL,
+
+ `quantidade` INT NOT NULL,
+
+ `preco` DECIMAL(8,2) NOT NULL,
+
+ `tiponegocio_id` INT NOT NULL,
+
+PRIMARY KEY (`codigo_id`),
+
+INDEX `tiponegocio_fk_idx` (`tiponegocio_id` ASC),
+
+CONSTRAINT `tiponegocio_fk`
+
+FOREIGN KEY (`tiponegocio_id`)
+
+REFERENCES `mercadorias_db`.`tiponegocio_tb` (`tiponegocio_id`)
+
+ON DELETE NO ACTION
+
+ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;

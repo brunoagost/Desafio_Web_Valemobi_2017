@@ -1,0 +1,70 @@
+.navbar{
+  background-color: #363636;
+  border-bottom: none;
+  width: 100%;
+  box-shadow: 0px 0px 10px black;
+  z-index: 1;
+}
+.well{
+  margin-top: 45px;
+  background-color: #CD6600;
+  width: 100%;
+  box-shadow: 0px 0px 10px black;
+  z-index: 1;
+  border: none;
+}
+.alert{
+  box-shadow: 0px 0px 4px black;
+  z-index: 1;
+  border: none;
+}
+.toptab{
+  padding: 6px;
+  background-color: #F5DEB3;
+  box-shadow: 0px 0px 4px black;
+  z-index: 1;
+}
+.remove{
+  padding: 6px;
+  background-color: #FF4040;
+  box-shadow: 0px 0px 2px black;
+  z-index: 1;
+}
+.altera{
+  background-color: #4F94CD;
+  box-shadow: 0px 0px 2px black;
+  z-index: 1;
+}
+.default{
+  margin-top: 20px;
+  color: black;
+  background-color: #CD6600;
+  box-shadow: 0px 0px 5px black;
+  z-index: 1;
+}
+.glyphicon{
+  color: black;
+  margin-right:  5px;
+}
+.rodape{
+  color: black;
+  margin-top: 30px;
+  background-color: #363636;
+  width: 100%;
+  box-shadow: 0px 0px 10px black;
+  z-index: 1;
+  margin-bottom: 0;
+}
+.footera{
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.assinatura{
+  color: #B5B5B5;
+  font-size: 15px;
+}
+.error{
+  color: #FF6347;
+}
+.msg-erro{
+  color: #FF6347;
+}
