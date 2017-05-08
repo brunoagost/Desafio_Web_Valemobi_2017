@@ -1,11 +1,10 @@
 <?php
 require_once'classes/DaoMercadoria.php';
+include 'cabecalho.php';
 //Mesma logica do adicionar
 $mercadoria = new DaoMercadoria();
 if (isset($_POST["confirma"])){
-    $codigo_id = $_POST["codigo_id"];
-    $resultado = $mercadoria->findCodigo($codigo_id);
-          if($resultado == null ){
+               $codigo_id = $_POST["codigo_id"];
                 $tipo = $_POST["tipo"];
                 $nome = $_POST["nome"];
                 $quantidade = $_POST["quantidade"];
@@ -17,21 +16,14 @@ if (isset($_POST["confirma"])){
                 $mercadoria->setPreco($preco);
                 $mercadoria->setTipoNegocio_id($tiponegocio_id);
                       if($mercadoria->update($codigo_id)){
-                        $msg = true;
-                        header('location:operacaoes.php.?msg='.$msg);
-                        exit();
+                       header('location:index.php?msg');
+                       exit();
                       }else{
-                        $erro = true;
-                        header('location:operacaoes.php.?erro='.$erro);
+                        header('location:index.php?erro');
                         exit();
-                     }
-            }else{
-            $id = true;
-            header('location:operacaoes.php.?id='.$id);
-            exit();
-            };
-}else{
-$erro = true;
-header('location:operacaoes.php.?erro='.$erro);
-exit();
-};
+                      };
+  }else{
+    header('location:index.php?erro');
+    exit();
+  };
+
