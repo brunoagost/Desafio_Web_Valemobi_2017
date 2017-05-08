@@ -36,7 +36,7 @@ class DaoMercadoria extends ModelMercadoria {
     }
     public function findAllMerc() {
         try {
-        $sql = "SELECT m.*, t.nome as tiponegocio_tb_nome FROM $this->tabela as m join tiponegocio_tb as t on t.tiponegocio_id=m.tiponegocio_id";
+        $sql = "SELECT m.*, t.nome as tiponegocio_tb_nome FROM $this->tabela as m join tiponegocio_tb as t on t.tiponegocio_id=m.tiponegocio_id ORDER BY m.codigo_id ASC";
         $stm = ConBd::prepare($sql);
         $stm->execute();
         return $stm->fetchAll();
