@@ -20,21 +20,17 @@ if (isset($_POST["confirma"])){
                 $mercadoria->setPreco($preco);
                 $mercadoria->setTipoNegocio_id($tiponegocio_id);
                     if($mercadoria->insert()){
-                      $msg= true;
-                     header('location:index.php.?msg='.$msg);
+                      header('location:index.php?msg');
                       exit();
                     }else{
-                      $erro= true;
-                      header('location:index.php.?erro='.$erro);
+                      header('location:index.php?erro');
                       exit();
                     };
         }else{
-          $id= true;
-          header('location:index.php.?id='.$id);
+          header('location:index.php?id');
           exit();
         };
 }else{
-  $erro= true;
-  header('location:index.php.?erro='.$erro);
+  header('location:index.php?erro');
   exit();
 };
