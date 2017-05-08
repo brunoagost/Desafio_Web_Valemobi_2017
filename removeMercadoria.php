@@ -5,16 +5,13 @@ if (isset($_POST['excluir'])){
   $codigo_id = $_POST['codigo_id'];
       if($codigo_id !== null){
       $mercadoria->delete($codigo_id);
-      $msg = true;
-      header('location:operacaoes.php.?msg='.$msg);
+      header('location:operacaoes.php?msg');
       exit();
       }else{
-        $erro = true;
-        header('location:operacaoes.php.?erro='.$erro);
+        header('location:operacaoes.php?erro');
         exit();
       }
 }else {
-  $erro = true;
-  header('location:operacaoes.php.?erro='.$erro);
+  header('location:operacaoes.php?erro');
   exit();
 }
